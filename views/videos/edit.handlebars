@@ -1,0 +1,28 @@
+<div class="title-container">
+    <span id="save-video">Save a video</span>
+</div>
+
+<form method="POST" action="/videos/{{video._id}}/edit">
+    <label for="title">title :
+        {{#if video.error.title}}
+            <a id="error" class="error">{{video.error.title}}</a>
+        {{/if}}
+    </label>
+    <input value="{{video.title}}" id="title" name="title" type="text">
+    
+    <label for="url">url :
+        {{#if video.error.url}}
+            <a id="error" class="error">{{video.error.url}}</a>
+        {{/if}}
+    </label>
+    <input value="{{video.url}}" id="url" name="url" type="text">
+    
+    <label for="url">description :
+        {{#if video.error.description}}
+            <a id="error" class="error">{{video.error.description}}</a>
+        {{/if}}
+    </label>
+    <textarea id="description" name="description" type="text">{{video.description}}</textarea>
+    
+    <input id="submit" type="submit">
+</form>
